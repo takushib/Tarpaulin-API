@@ -1,0 +1,41 @@
+version: '3.7'
+services:
+  api:
+    build: .
+    image: tarpaulin-api
+    restart: always
+    ports:
+      - 8000:8000
+    environment:
+      MYSQL_ROOT_PASSWORD: hunter2
+      MYSQL_USER: hunter2
+      MYSQL_PASSWORD: hunter2
+      MYSQL_DB: Tarpaulin
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    volumes:
+      - ./:/usr/src/app
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: hunter2
+      MYSQL_USER: hunter2
+      MYSQL_PASSWORD: hunter2
+      MYSQL_DATABASE: Tarpaulin
+    volumes:
+      - ./db-init:/docker-entrypoint-initdb.d
+      - db_data:/var/lib/mysql
+
+  redis:
+    image: redis:latest
+    restart: always
+
+volumes:
+  db_data:
+    name: tarpaulin-mysql-data

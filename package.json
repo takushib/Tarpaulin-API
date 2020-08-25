@@ -1,0 +1,36 @@
+{
+  "name": "final-project-rimraffers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "cross-env ./node_modules/.bin/nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osu-cs493-sp20/final-project-rimraffers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osu-cs493-sp20/final-project-rimraffers/issues"
+  },
+  "homepage": "https://github.com/osu-cs493-sp20/final-project-rimraffers#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cross-env": "^7.0.2",
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0",
+    "redis": "^3.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
